@@ -1,9 +1,30 @@
 <!doctype html>
 <html lang="en">
-    <head></head>
+    <head>
+      <script type="text/javascript">
+    function goToPage() {
+        var page = document.getElementById('page').value;
+        window.location = "http://localhost:5000/" + page;
+    }
+     </script>
+     <style>
+        #container {
+          margin: 100px;
+          text-align: center;
+          padding: 10px;
+        }
+
+     </style>
+    </head>
     <body>
         <!-- every row is a dictionary -->
         <h1>Demetrie's Amp'd-up Syllables</h1>
+        <div id="container">
+          word: <input type="text" id="page" value="input word"/>
+          <br>
+          <input type="submit" value="submit" onclick="goToPage();" />
+          <br>
+        </div>
         {% for obj in object_list %}
         {{ obj }}
         {% endfor %}
